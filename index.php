@@ -1,22 +1,18 @@
 <?php
  /**
-  *todo: Segundo punto taller arrays 
-  **Crear un array para un sistema solar
+  *todo: Tercer punto taller arrays 
+  **Filtrar planetas habitables
   */
-    if (isset($_POST['numP'])){
-        $numP = $_POST['numP'];
-    
-        $sistemaInventado = array();
 
-        for ($i = 1; $i <= $numP; $i++) {
-            $sistemaInventado["Planeta $i"] = 'Deshabitado';
-        }
+$planetas = array('Sol'=>false,'Mercury'=>false,'Venus'=>false,'Earth'=>true,'Mars'=>true,'Jupiter'=>false,'Saturn'=>false,'Uranus'=>false,'Neptune'=>false);
 
-        echo "Estado inicial del sistema es:"."<br>";
-        foreach ($sistemaInventado as $planeta => $estado) {
-            echo "$planeta: $estado";
-            echo "<br>";
-        }
+$filtrados= array_filter($planetas,function($habitable){
+    return $habitable;
+});
+
+echo "Planetas habitables: <br>";
+foreach($filtrados as $planetas => $habitable){
+    echo "$planetas <br>";
 }
 
 ?>
