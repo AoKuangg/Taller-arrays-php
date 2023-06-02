@@ -1,33 +1,28 @@
 <?php
  /**
-  *todo: Cuarto punto taller arrays 
-  **Calcular la gravedad en diferentes planetas
+  *todo: Quinto punto taller arrays 
+  **Calcular la masa total de una flota de naves espaciales
   */
-$gravedadR = array(
-    "Mercurio" => 0.38,
-    "Venus" => 0.91,
-    "Tierra" => 1.00,
-    "Marte" => 0.38,
-    "Jupiter" => 2.53,
-    "Saturno" =>  1.07,
-    "Urano" => 0.92,
-    "Neptuno" => 1.19
-);
-function calcularGravedad($Grelativa){
-    $Greal = array();
-    $Gtierra = 9.8;
 
-    foreach($Grelativa as $planeta => $relativa){
-        $Greal[$planeta] = $relativa * $Gtierra;
+    $naves = array(
+        "Nave 1" => 1000,
+        "Nave 2" => 1500,
+        "Nave 3" => 2000,
+        "Nave 4" => 2500,
+        "Nave 5" => 3000,
+    );
+    function calcularMasaTotal($naves){
+        $masaTotal = 0;
+        foreach($naves as $nave => $masa){
+            $masaTotal += $masa;
+        }
+        return $masaTotal;
     }
-    return $Greal;
-}
 
-$Greal = calcularGravedad($gravedadR);
-echo "Gravedad aprox de los planetas: <br>";
-foreach($Greal as $planeta => $gravedad){
-    echo "$planeta:$gravedad m/s^2 <br>";
-}
+    $masaTotal = calcularMasaTotal($naves);
+
+    print_r($naves);
+    echo "<br> La masa total de la flora de naves es: $masaTotal kg";
 
 
 ?>
