@@ -1,15 +1,23 @@
 <?php
  /**
-  *todo: Primer punto taller arrays 
-  **Identificar planetas y sus respectivos numeros de orden en el sistema solar
+  *todo: Segundo punto taller arrays 
+  **Crear un array para un sistema solar
   */
-$planetas = array('Sol'=>0,'Mercury'=>1,'Venus'=>2,'Earth'=>3,'Mars'=>4,'Jupiter'=>5,'Saturn'=>6,'Uranus'=>7,'Neptune'=>8);
-$buscarn = array_flip($planetas);
-print_r($buscarn);
+    if (isset($_POST['numP'])){
+        $numP = $_POST['numP'];
+    
+        $sistemaInventado = array();
 
-$coso =  array_search('4',array_keys($buscarn));
-echo '<br>';
-if ($coso !== false){
-    $planetaBuscado = $buscarn[$coso];
-    echo "Planet found: " . $planetaBuscado;
+        for ($i = 1; $i <= $numP; $i++) {
+            $sistemaInventado["Planeta $i"] = 'Deshabitado';
+        }
+
+        echo "Estado inicial del sistema es:"."<br>";
+        foreach ($sistemaInventado as $planeta => $estado) {
+            echo "$planeta: $estado";
+            echo "<br>";
+        }
 }
+
+?>
+ 
