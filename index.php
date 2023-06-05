@@ -1,32 +1,31 @@
 <?php
  /**
-  *todo: Octavo punto taller arrays 
-  **Seleccionar un planeta aleatorio para explorar
+  *todo: Noveno punto taller arrays 
+  **Eliminar elementos duplicados de una lista de especies alienígenas
   */
 
-  $planetas = array(
-    "Mercurio",
-    "Venus",
-    "Tierra",
-    "Marte",
-    "Júpiter",
-    "Saturno",
-    "Urano",
-    "Neptuno"
-);
+  if (isset($_POST['especies'])) {
 
-$indiceAleatorio = array_rand($planetas);
-$planetaSeleccionado = $planetas[$indiceAleatorio];
+    $textoEspecies = $_POST['especies'];
+
+    $especies = explode("\n", $textoEspecies);
+
+    $especiesUnicas = array_unique($especies);
+
+    $textoEspeciesUnicas = implode("\n", $especiesUnicas);
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resultado de la exploración</title>
+    <title>Especies alienígenas</title>
 </head>
 <body>
-    <h3>Resultado de la exploración</h3>
-    <p>El explorador va a explorar el planeta: <?php echo $planetaSeleccionado; ?></p>
+    <h1>Especies alienígenas despues del filtro</h1>
+    <p>Lista de especies alienígenas sin duplicaciones:</p>
+    <textarea rows="5" cols="30" readonly><?php echo $textoEspeciesUnicas; ?></textarea>
 </body>
 </html>
+ 
  
