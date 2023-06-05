@@ -1,26 +1,32 @@
 <?php
  /**
-  *todo: Sexto punto taller arrays 
-  **Verificar la existencia de un planeta en un sistema solar
+  *todo: Octavo punto taller arrays 
+  **Seleccionar un planeta aleatorio para explorar
   */
 
-  if (isset($_POST['nombre_nave'])) {
+  $planetas = array(
+    "Mercurio",
+    "Venus",
+    "Tierra",
+    "Marte",
+    "Júpiter",
+    "Saturno",
+    "Urano",
+    "Neptuno"
+);
 
-    $nombreNave = $_POST['nombre_nave'];
-
-    $tiposNaves = array(
-        "Caza",
-        "Nave de carga",
-        "Explorador",
-        "Nave nodriza",
-        "Nave de combate"
-    );
-
-    if (in_array($nombreNave, $tiposNaves)) {
-        echo "El tipo de nave espacial $nombreNave está presente en la flota.";
-    } else {
-        echo "El tipo de nave espacial $nombreNave no está presente en la flota.";
-    }
-}
+$indiceAleatorio = array_rand($planetas);
+$planetaSeleccionado = $planetas[$indiceAleatorio];
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado de la exploración</title>
+</head>
+<body>
+    <h3>Resultado de la exploración</h3>
+    <p>El explorador va a explorar el planeta: <?php echo $planetaSeleccionado; ?></p>
+</body>
+</html>
  
