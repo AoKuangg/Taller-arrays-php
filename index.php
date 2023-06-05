@@ -1,31 +1,34 @@
 <?php
  /**
-  *todo: Noveno punto taller arrays 
-  **Eliminar elementos duplicados de una lista de especies alienígenas
+  *todo: Decimo punto taller arrays 
+  **Encontrar planetas comunes en dos sistemas solares
   */
 
-  if (isset($_POST['especies'])) {
+  if (isset($_POST['sistema1']) && isset($_POST['sistema2'])) {
 
-    $textoEspecies = $_POST['especies'];
+    $textoSistema1 = $_POST['sistema1'];
+    $textoSistema2 = $_POST['sistema2'];
 
-    $especies = explode("\n", $textoEspecies);
 
-    $especiesUnicas = array_unique($especies);
+    $sistema1 = explode("\n", $textoSistema1);
+    $sistema2 = explode("\n", $textoSistema2);
 
-    $textoEspeciesUnicas = implode("\n", $especiesUnicas);
+
+    $planetasComunes = array_intersect($sistema1, $sistema2);
+
+    $textoPlanetasComunes = implode("\n", $planetasComunes);
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Especies alienígenas</title>
+    <title>Planetas comunes</title>
 </head>
 <body>
-    <h1>Especies alienígenas despues del filtro</h1>
-    <p>Lista de especies alienígenas sin duplicaciones:</p>
-    <textarea rows="5" cols="30" readonly><?php echo $textoEspeciesUnicas; ?></textarea>
+    <h1>Planetas comunes</h1>
+    <p>Lista de planetas comunes en los dos sistemas solares:</p>
+    <textarea rows="5" cols="30" readonly><?php echo $textoPlanetasComunes; ?></textarea>
 </body>
 </html>
- 
  
