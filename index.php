@@ -1,29 +1,30 @@
 <?php
  /**
-  *todo: Quinto punto taller arrays 
-  **Calcular la masa total de una flota de naves espaciales
+  *todo: Sexto punto taller arrays 
+  **Verificar la existencia de un planeta en un sistema solar
   */
 
-    $naves = array(
-        "Nave 1" => 1000,
-        "Nave 2" => 1500,
-        "Nave 3" => 2000,
-        "Nave 4" => 2500,
-        "Nave 5" => 3000,
+  if (isset($_POST['nombre_planeta'])) {
+
+    $nombrePlaneta = $_POST['nombre_planeta'];
+
+    $planetas = array(
+        "Mercurio",
+        "Venus",
+        "Tierra",
+        "Marte",
+        "Júpiter",
+        "Saturno",
+        "Urano",
+        "Neptuno"
     );
-    function calcularMasaTotal($naves){
-        $masaTotal = 0;
-        foreach($naves as $nave => $masa){
-            $masaTotal += $masa;
-        }
-        return $masaTotal;
+
+    if (in_array($nombrePlaneta, $planetas)) {
+        echo "El planeta $nombrePlaneta existe en el sistema solar.";
+    } else {
+        echo "El planeta $nombrePlaneta no existe en el sistema solar.";
     }
-
-    $masaTotal = calcularMasaTotal($naves);
-
-    print_r($naves);
-    echo "<br> La masa total de la flora de naves es: $masaTotal kg";
-
+}
 
 ?>
  
