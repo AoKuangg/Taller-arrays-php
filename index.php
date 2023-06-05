@@ -4,27 +4,23 @@
   **Verificar la existencia de un planeta en un sistema solar
   */
 
-  if (isset($_POST['nombre_planeta'])) {
+  if (isset($_POST['nombre_nave'])) {
 
-    $nombrePlaneta = $_POST['nombre_planeta'];
+    $nombreNave = $_POST['nombre_nave'];
 
-    $planetas = array(
-        "Mercurio",
-        "Venus",
-        "Tierra",
-        "Marte",
-        "Júpiter",
-        "Saturno",
-        "Urano",
-        "Neptuno"
+    $tiposNaves = array(
+        "Caza",
+        "Nave de carga",
+        "Explorador",
+        "Nave nodriza",
+        "Nave de combate"
     );
 
-    if (in_array($nombrePlaneta, $planetas)) {
-        echo "El planeta $nombrePlaneta existe en el sistema solar.";
+    if (in_array($nombreNave, $tiposNaves)) {
+        echo "El tipo de nave espacial $nombreNave está presente en la flota.";
     } else {
-        echo "El planeta $nombrePlaneta no existe en el sistema solar.";
+        echo "El tipo de nave espacial $nombreNave no está presente en la flota.";
     }
 }
-
 ?>
  
