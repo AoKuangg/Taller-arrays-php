@@ -1,49 +1,32 @@
 <?php
  /**
-  *todo: Doceavo punto taller arrays 
-  **Crear una lista de satélites para un planeta
+  *todo: Treceavo punto taller arrays 
+  **Revertir el orden de los planetas en un sistema solar
   */
 
-  if (isset($_POST['planeta']) && isset($_POST['satelites'])) {
-    $planeta = $_POST['planeta'];
-    $satelites = $_POST['satelites'];
+  if (isset($_POST['planetas'])) {
+    $planetas = $_POST['planetas'];
 
-    $arraySatelites = explode("\n", $satelites);
+    $arrayPlanetas = explode("\n", $planetas);
 
-    $listaSatelites = [];
-    if (file_exists('satelites.txt')) {
-        $listaSatelites = unserialize(file_get_contents('satelites.txt'));
-    }
-
-    $listaSatelites[$planeta] = array_merge($listaSatelites[$planeta] ?? [], $arraySatelites);
-
-    file_put_contents('satelites.txt', serialize($listaSatelites));
+    $arrayPlanetasInvertido = array_reverse($arrayPlanetas);
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rastreador de satélites</title>
+    <title>Invertir el orden de los planetas</title>
 </head>
 <body>
-    <h1>Rastreador de satélites</h1>
+    <h3>Invertir el orden</h3>
     <?php
-
-    if (isset($_POST['planeta'])) {
-        $planetaSeleccionado = $_POST['planeta'];
-        echo "<h2>Satélites de $planetaSeleccionado:</h2>";
-        
-        if (isset($listaSatelites[$planetaSeleccionado])) {
-            $satelitesPlaneta = $listaSatelites[$planetaSeleccionado];
-            foreach ($satelitesPlaneta as $satelite) {
-                echo "$satelite<br>";
-            }
-        } else {
-            echo "No se encontraron satélites para $planetaSeleccionado.";
+    if (isset($arrayPlanetasInvertido)) {
+        echo "<h5>Orden invertido de los planetas:</h5>";
+        foreach ($arrayPlanetasInvertido as $planeta) {
+            echo "$planeta<br>";
         }
     }
     ?>
 </body>
 </html>
- 
