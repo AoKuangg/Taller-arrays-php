@@ -7,13 +7,22 @@
     <title>Da igual esta clase</title>
 </head>
 <body>
-    <h3>Planetas únicos</h3>
+    <h3>Rastreador de satélites</h3>
     <form action="index.php" method="POST">
-        <label for="sistema1">Sistema solar 1:</label><br>
-        <textarea id="sistema1" name="sistema1" rows="5" cols="30"></textarea><br>
-        <label for="sistema2">Sistema solar 2:</label><br>
-        <textarea id="sistema2" name="sistema2" rows="5" cols="30"></textarea><br>
-        <button type="submit">Planetas únicos</button>
+        <label for="planeta">Planeta:</label>
+        <select id="planeta" name="planeta">
+            <option value="mercurio">Mercurio</option>
+            <option value="venus">Venus</option>
+            <option value="tierra">Tierra</option>
+            <option value="marte">Marte</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="saturno">Saturno</option>
+            <option value="urano">Urano</option>
+            <option value="neptuno">Neptuno</option>
+        </select><br>
+        <label for="satelites">Satélites:</label><br>
+        <textarea id="satelites" name="satelites" rows="5" cols="30"></textarea><br>
+        <button type="submit">Agregar satélites</button>
     </form>
 </body>
 </html>
